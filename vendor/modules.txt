@@ -1,8 +1,9 @@
-# github.com/SkycoinProject/dmsg v0.0.0-20191023060159-6681cbc57b0b
+# github.com/SkycoinProject/dmsg v0.0.0-20191107094546-85c27858fca6
 github.com/SkycoinProject/dmsg
 github.com/SkycoinProject/dmsg/cipher
 github.com/SkycoinProject/dmsg/disc
 github.com/SkycoinProject/dmsg/ioutil
+github.com/SkycoinProject/dmsg/netutil
 github.com/SkycoinProject/dmsg/noise
 # github.com/SkycoinProject/skycoin v0.26.0
 github.com/SkycoinProject/skycoin/src/cipher
@@ -13,7 +14,7 @@ github.com/davecgh/go-spew/spew
 github.com/flynn/noise
 # github.com/konsorten/go-windows-terminal-sequences v1.0.1
 github.com/konsorten/go-windows-terminal-sequences
-# github.com/mattn/go-colorable v0.1.2
+# github.com/mattn/go-colorable v0.1.4
 github.com/mattn/go-colorable
 # github.com/mattn/go-isatty v0.0.8
 github.com/mattn/go-isatty
@@ -40,7 +41,7 @@ golang.org/x/crypto/internal/chacha20
 golang.org/x/crypto/internal/subtle
 golang.org/x/crypto/poly1305
 golang.org/x/crypto/ssh/terminal
-# golang.org/x/net v0.0.0-20191028085509-fe3aa8a45271
+# golang.org/x/net v0.0.0-20191014212845-da9a3fd4c582
 golang.org/x/net/nettest
 # golang.org/x/sys v0.0.0-20191010194322-b09406accb47
 golang.org/x/sys/cpu

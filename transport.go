@@ -54,28 +54,28 @@ func (t DMSGTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 	port := uint16(rPort)
 
 	var (
-		transport    *dmsg.Transport
-		transportErr error
+		stream    *dmsg.Stream
+		streamErr error
 	)
 	for i := uint8(0); i < t.RetryCount; i++ {
-		transport, transportErr = t.dmsgC.Dial(context.Background(), pk, port)
-		if transportErr != nil {
-			log.Println("Transport was not established, retrying...")
+		stream, streamErr = t.dmsgC.Dial(context.Background(), pk, port)
+		if streamErr != nil {
+			log.Println("Stream was not established, retrying...")
 			// Adding this to make sure we have enough time for delegate servers to become available
 			time.Sleep(200 * time.Millisecond)
 			continue
 		}
-		transportErr = nil
+		streamErr = nil
 		break
 	}
-	if transportErr != nil {
-		return nil, transportErr
+	if streamErr != nil {
+		return nil, streamErr
 	}
-	defer transport.Close()
+	defer stream.Close()
 
-	if err := req.Write(transport); err != nil {
+	if err := req.Write(stream); err != nil {
 		return nil, err
 	}
 
-	return http.ReadResponse(bufio.NewReader(transport), req)
+	return http.ReadResponse(bufio.NewReader(stream), req)
 }
